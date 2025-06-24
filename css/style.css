@@ -1,0 +1,617 @@
+/* ---------------- GENERAL ATRIBBUTES --------------------- */
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+	height: 100vh !important;
+	/*width: 100vw !important;*/
+	display: grid;
+	min-height: 100vh;
+}
+
+.bg{
+	background-color: #BFE2FF;
+	background-size: cover;
+   
+	
+}
+
+/* --------------------- LOGO -------------------------- */
+
+.logo_text {
+	font-family: 'Comfortaa', cursive;
+	font-size: 1.2em;
+}
+
+.icon {
+	padding-left: 0.5em;
+}
+
+
+.btn-sign-up {
+	background-color: #fc527cd5;
+	color: #fff;
+}
+
+.btn-sign-up:hover {
+	background-color: #fc527c;
+	color:#fff;
+}
+
+.my-card{
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  	cursor: pointer;
+}
+
+.my-card:hover{
+     transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+  color: #007bff;
+  text-decoration: none;
+}
+
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%; 
+  display: flex;
+  align-items: end;
+  justify-content: center; 
+}
+
+
+/* ------------------- MAIN CONTENT -------------------- */
+.fc-content span {
+	color: #fff;
+}
+
+/* --------------------- PROJECT CARD ------------------------------ */
+.widget-subheading {
+    font-size: 0.75em;
+}
+
+.scroll-area {
+	max-height: 65vh;
+    height: auto;
+	padding-bottom: 0.5em;
+    overflow-x: hidden;
+}
+
+.todo-indicator {
+    position: absolute;
+    width: 4px;
+    height: 60%;
+    border-radius: 0.3rem;
+    left: 0.625rem;
+    top: 20%;
+    opacity: .6;
+    transition: opacity .2s;
+}
+
+.widget-content .widget-content-wrapper {
+    display: flex;
+    flex: 1;
+    position: relative;
+    align-items: center;
+}
+
+.swa12-confirm, .swa12-cancel {
+	margin: 0 0.3em !important;
+}
+
+.hidden {
+    display: none;
+}
+.unhidden {
+    display: block;
+}
+
+.font-small {
+	font-size: 0.8em;
+}
+
+#newProject:target {
+	-webkit-transition: all 1s;
+	transition: all 1s;
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.title{
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-weight: 400!important;
+}
+
+
+
+.proj{
+
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 230px;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+
+
+}
+
+
+
+
+/* Оформление боковой панели */
+#side-checkbox {
+    display: none;
+}
+.side-panel {
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    left: -360px;
+    background: #BFE2FF;
+   
+    transition: all 0.5s;  
+    width: 320px;
+    height: 100vh;
+    box-shadow: 10px 0 20px rgba(0,0,0,0.4);
+    color: #FFF;
+    padding: 40px 20px;
+}
+.side-title {
+    margin-top: -40px;
+    margin-left: -19px;
+    width: 319px;
+    height: 100px;
+    background: #337AB7;
+    font-size: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #BFE2FF;
+}
+/* Оформление кнопки на странице */
+.side-button-1-wr {
+    text-align: center; /* Контейнер для кнопки, чтобы было удобнее ее разместить */
+}
+.side-button-1 .side-b {
+    margin: 10px;
+    text-decoration: none;
+    position: relative;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 12px 30px;
+    color: #FFF;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', Тahoma, sans-serif;
+    background: #337AB7;
+    cursor: pointer;
+    border: 2px solid #BFE2FF;
+}
+.side-button-1 .side-b:hover,
+.side-button-1 .side-b:active,
+.side-button-1 .side-b:focus {
+    color: #FFF;
+}
+.side-button-1 .side-b:after,
+.side-button-1 .side-b:before {
+    position: absolute;
+    height: 4px;
+    left: 50%;
+    bottom: -6px;
+    content: "";
+    transition: all 280ms ease-in-out;
+    width: 0;
+}
+.side-button-1 .side-open:after,
+.side-button-1 .side-open:before {
+    background: #337AB7;
+}
+.side-button-1 .side-close:after,
+.side-button-1 .side-close:before {
+    background: #337AB7;
+}
+.side-button-1 .side-b:before {
+    top: -6px;
+}
+.side-button-1 .side-b:hover:after,
+.side-button-1 .side-b:hover:before {
+    width: 100%;
+    left: 0;
+}
+/* Переключатели кнопки 1 */
+.side-button-1 .side-close {
+    display: none;
+}
+#side-checkbox:checked + .side-panel + .side-button-1-wr .side-button-1 .side-open {
+    display: none;
+}
+#side-checkbox:checked + .side-panel + .side-button-1-wr .side-button-1 .side-close {
+    display: block;
+}
+#side-checkbox:checked + .side-panel {
+    left: 0;
+}
+/* Оформление кнопки на панеле */
+.side-button-2 {
+    font-size: 30px;
+    border-radius: 20px;
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    transform: rotate(45deg);
+    color: #BFE2FF;   
+    transition: all 280ms ease-in-out;   
+}
+.side-button-2:hover {
+    transform: rotate(45deg) scale(1.1);   
+    color: #FFF;
+}
+
+
+.card-header {
+    background: #337AB7;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #337AB7;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    color: white;
+}
+
+.pl-1, .px-1 {
+margin-left: auto;
+margin-right: auto;
+}
+
+side-b side-open{
+border-radius: 20px;
+}
+header {
+height: 100px;
+background-color: #337AB7;
+}
+li {
+   /* font-color: white; */
+    float: left;
+    
+}
+
+.hbtn {
+ color: white; 
+ font-size: 20px;
+ padding-left: 50px;
+ text-decoration: none;
+}
+.hbtn:link,
+.hbtn:visited,
+.hbtn:hover,
+.hbtn:active {
+  text-decoration: none;
+}
+.side-button-1 {
+ border: 0;
+ border-color: #337AB7;
+}
+side-b side-open {
+ border: 0;
+ border-color: #337AB7;
+}
+side-button-1-wr {
+ border: 0;
+ border-color: #337AB7;
+}
+.btn-primary {
+    margin-left: auto;
+    margin-right: auto;
+  /* color: #fff;-->  */
+    background-color: #337AB7;
+    border-color: #337AB7;
+}
+label {
+    color: black
+}
+.modal-header {
+    background: #337AB7;
+}
+.text-edit {
+    color: white!important;
+}
+.text-white {
+    color: white!important;
+}
+.mb-3, .my-3 {
+    margin-bottom: 10rem!important;
+}
+.btn-f {
+    display: block;
+    max-width: 100%;
+    padding: 7px 20px;
+    background: #337AB7;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #fff;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.reg {
+    margin-top: -60px;
+}
+.reg2 {
+    margin-top: -90px;
+}
+.container {
+    padding-left: 250px;
+}
+.mynav {
+    margin-right: 20px;
+    width: 400px;
+    margin-left: -300px;
+}
+.mynav2 {
+    margin-right: 20px;
+       
+    width: 300px;
+    margin-left: -100px;
+}
+.mynav3 {
+    margin-right: 20px;
+       
+    width: 300px;
+    margin-left: -100px;
+}
+.mynav4 {
+    margin-right: 20px;
+       
+    width: 300px;
+    margin-left: -100px;
+}
+.mynav5 {
+    margin-right: 30px;
+       
+    width: 200px;
+    margin-left: -100px;
+}
+.hide {
+    display: none;
+  }
+  .btn-outline-success {
+    color: #007bff;
+    border-color: #337AB7;
+    border-radius: 400px;
+}
+.btn-outline-danger {
+    color: #007bff;
+    border-color: #337AB7;
+    border-radius: 400px;
+}
+
+
+
+#chatModal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+#chatBoxModal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+/* Всплывающее окно */
+#chatModal .modal-content {
+  background: #fff;
+  height: 400px;
+  width:400px;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  font-family: sans-serif;
+  z-index:10000;
+}
+
+#chatModal2 {
+  background: #337AB7;
+  min-height: 400px;
+  height: auto;
+  width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+  z-index: 10000;
+  font-family: sans-serif;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  
+}
+
+#chatModal2 .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+}
+#chatModal2 .close-btn:hover {
+  color: #000;
+}
+
+#chatModal2 ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 10px; /* горизонтальный и вертикальный отступы */
+}
+
+#chatModal2 li {
+  margin: 0; /* сброс если был */
+}
+
+#chatModal2 li a {
+  padding: 10px 14px;
+  background: #d0e3ff;
+  border-radius: 8px;
+  color: #333;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+#chatModal2 li a:hover {
+  background-color: #d0e3ff;
+  color: #0a58ca;
+}
+
+
+/* Закрыть */
+#chatModal .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+}
+#chatModal .close-btn:hover {
+  color: #000;
+}
+
+/* Список */
+#chatModal ul {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 10px;
+  flex-direction: column;
+}
+
+#chatModal li {
+  margin-bottom: 10px;
+}
+
+#chatModal a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: #f0f0f0;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+#chatModal a:hover {
+  background-color: #d0e3ff;
+  color: #0a58ca;
+}
+
+#chatText {
+    color:#f0f0f0;
+}
+
+.chat-top-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  padding-left: 20px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.chat-top-btn:hover {
+  color: #dbeafe;
+}
+
+.chat-top-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+.mynav-chat {
+    margin-right: 100px;
+    width: 100px;
+    margin-left: -50px;
+}
+
+
+
+.chat-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 4px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.chat-line span {
+  flex-grow: 1;
+  word-break: break-word;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #0a58ca;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: color 0.2s ease;
+}
+
+.delete-btn:hover {
+  color: red;
+}
+
+.edit-btn {
+  background: none;
+  border: none;
+  color: #0a58ca;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: color 0.2s ease;
+}
+
+.edit-btn:hover {
+  color: green;
+}

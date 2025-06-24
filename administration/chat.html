@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket Chat</title>
+    <style>
+        #chat {
+            height: 300px;
+            border: 1px solid #ccc;
+            overflow-y: auto;
+            padding: 5px;
+            margin-bottom: 10px;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<h2>💬 Чат в реальном времени</h2>
+<div id="chat"></div>
+<input type="text" id="msg" placeholder="Введите сообщение">
+<button onclick="send()">Отправить</button>
+
+<script>
+    const ws = new WebSocket('ws://localhost:8080');
+
+    ws.onopen = () => {
+        console.log('✅ Соединение с сервером установлено');
+    };
+
+    ws.onerror = err => {
+        console.error('❌ Ошибка WebSocket:', err);
+    };
+
+    ws.onclose = () => {
+        console.warn('⚠️ Соединение закрыто');
+    };
+
+    ws.onmessage = async e => {
+        let text = '';
+        if (e.data instanceof Blob) {
+            text = await e.data.text();
+        } else {
+            text = e.data;
+        }
+        document.getElementById('chat').innerHTML += `<div>${text}</div>`;
+        const chatBox = document.getElementById('chat');
+        chatBox.scrollTop = chatBox.scrollHeight;
+    };
+
+    function send() {
+        const input = document.getElementById('msg');
+        const message = input.value.trim();
+        if (!message) return;
+        if (ws.readyState === WebSocket.OPEN) {
+            ws.send(message);
+            input.value = '';
+        } else {
+            alert('Соединение с сервером не установлено');
+        }
+    }
+</script>
+
+</body>
+</html>
