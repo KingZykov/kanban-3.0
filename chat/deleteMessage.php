@@ -14,7 +14,7 @@ $conn = $db->connection();
 $id = (int)$_POST['id'];
 $userId = $_SESSION['id_user'];
 
-// Удаляем только своё сообщение
+// Удаляение своего сообщение
 $stmt = $conn->prepare("DELETE FROM messages WHERE id = :id AND sender_id = :sender_id");
 $success = $stmt->execute(['id' => $id, 'sender_id' => $userId]);
 
