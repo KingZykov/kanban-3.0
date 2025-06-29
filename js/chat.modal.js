@@ -91,9 +91,7 @@ function initSocket() {
 function send() {
   const input = document.getElementById('msg');
   const msg = input.value.trim();
-  if (!msg || !ws || ws.readyState !== WebSocket.OPEN) return;
-
-  ws.send(JSON.stringify({ chatId, senderId, sender_name: senderName, message: msg }));
+  if (!msg) return;
 
   fetch('../chat/saveMessage.php', {
     method: 'POST',
@@ -104,6 +102,19 @@ function send() {
     .then(data => {
       if (!data.status || data.status !== 'success') {
         console.error("Ошибка при сохранении:", data.message);
+        return;
+      }
+
+      //Отправляем сообщение в WebSocket уже с id
+      if (ws && ws.readyState === WebSocket.OPEN) {
+        ws.send(JSON.stringify({
+          type: 'new',
+          chatId,
+          id: data.id,                  // ID от saveMessage.php
+          senderId,
+          sender_name: senderName,
+          message: msg
+        }));
       }
     });
 

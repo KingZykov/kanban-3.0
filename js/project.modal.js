@@ -298,13 +298,13 @@ document.addEventListener("DOMContentLoaded", () => {
             <!-- DELETE MODAL -->
             <div id="project-delete-${i}" class="modal fade" role="dialog">
                 <div class="modal-dialog"><div class="modal-content">
-                <div class="text-white modal-header">btn-outline-primary
+                <div class="text-white modal-header ">
                     <h3 class="lead text-edit">Вы уверены?</h3>
                     <a class="close text-white btn" data-dismiss="modal">×</a>
                 </div>
                 <form class="delete-project-form" method="POST">
                     <div class="modal-body">
-                    <p class="text-white">Вы хотите безвозвратно удалить <i class="text-primary">${data.project_name}</i>?</p>
+                    <p class="text-dark">Вы хотите безвозвратно удалить <i class="text-primary">${data.project_name}</i>?</p>
                     <input type="hidden" name="delete_project_id" value="${data.id_project}">
                     </div>
                     <div class="modal-footer">
